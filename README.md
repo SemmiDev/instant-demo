@@ -1,3 +1,20 @@
+## Notes
+
+```bash
+podman login docker.io
+podman build -t sammidev/demo-time:1.0.0 .
+podman push sammidev/demo-time:1.0.0
+
+# tes postgres port forward
+kubectl port-forward svc/demo-time-db 5433:5432
+
+# Perintah ini akan terus berjalan sampai update selesai
+kubectl rollout status deployment/demo-time-app
+
+# Kembali ke revisi (konfigurasi) sebelumnya
+kubectl rollout undo deployment/demo-time-app
+```
+
 ### 1\. 📬 POST /api/events (Membuat Event Baru)
 
 Ini adalah perintah `POST` yang mengirim *body* JSON.
